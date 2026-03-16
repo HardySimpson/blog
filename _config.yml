@@ -1,7 +1,6 @@
 title: 我的博客
 description: 这是一个基于 Jekyll 的 GitHub Pages 博客
-theme: minima
-markdown: kramdown
+theme: jekyll-theme-minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
