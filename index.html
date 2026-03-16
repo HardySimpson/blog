@@ -1,0 +1,25 @@
+---
+layout: default
+title: 首页
+---
+
+<div class="home">
+  <h1 class="page-heading">文章列表</h1>
+  
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <div class="post-excerpt">
+          {{ post.excerpt }}
+        </div>
+        <a class="read-more" href="{{ post.url | relative_url }}">阅读全文 &rarr;</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">订阅 <a href="{{ "/feed.xml" | relative_url }}">RSS 订阅</a></p>
+</div>
