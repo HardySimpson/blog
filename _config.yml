@@ -1,0 +1,12 @@
+title: 我的博客
+description: 使用 GitHub Pages + Jekyll 搭建的中文技术博客
+lang: zh-CN
+markdown: kramdown
+timezone: Asia/Shanghai
+
+permalink: /:year/:month/:day/:title/
+
+collections:
+  posts:
+    output: true
+
