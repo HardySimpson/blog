@@ -218,7 +218,6 @@ Get-Content "$env:LOCALAPPDATA\ai.opencode.desktop\logs\opencode-desktop_*.log" 
 
 ---
 
-**作者**: OpenCode 社区  
 **最后更新**: 2026年3月19日  
 **版本**: 1.0  
 **许可证**: CC BY-SA 4.0
