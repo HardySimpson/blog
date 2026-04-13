@@ -7,8 +7,6 @@ date: 2026-03-16 10:00:00 +0800
 Sign-off-by: 难易
 Assisted-by: OpenClaw:minimax/M2.7
 
-# OpenCode 学习：AgentLoop 核心代码模块拆解
-
 ## 一、为什么要研究 AgentLoop？
 
 对于当前比较火的 Agent 编程来说，底层的逻辑其实相当直接：**不断把问题提给 LLM 大模型，获取答案，并调用工具执行**。
