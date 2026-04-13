@@ -4,10 +4,8 @@ title: "OpenCode 学习：AgentLoop 核心代码模块拆解"
 date: 2026-03-16 10:00:00 +0800
 ---
 
-OpenCode学习-AgentLoop核心的代码模块学习
-
-
-
+Sign-off-by: 难易
+Assisted-by: OpenClaw:minimax/M2.7
 
 # 为什么要研究AgentLoop、和OpenCode的实现？
 

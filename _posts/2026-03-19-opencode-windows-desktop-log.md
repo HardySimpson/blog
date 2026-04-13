@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "OpenCode 学习：OpenCode windows版桌面版日志完全指南"
+title: "OpenCode 学习：OpenCode Windows 版桌面版日志完全指南"
 date: 2026-03-19 13:00:00 +0800
 ---
-# OpenCode 桌面版日志完全指南
+
+Sign-off-by: 难易
+Assisted-by: OpenClaw:minimax/M2.7
 
 > 深入解析 OpenCode 桌面版的日志系统，解决"日志去哪儿了"的困惑
 

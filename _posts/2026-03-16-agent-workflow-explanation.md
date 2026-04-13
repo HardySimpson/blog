@@ -4,6 +4,9 @@ title: "OpenCode 学习：Agent工作流程通俗解释"
 date: 2026-03-16 16:24:00 +0800
 ---
 
+Sign-off-by: 难易
+Assisted-by: OpenClaw:minimax/M2.7
+
 ## 概述：Agent就像你的技术项目经理
 
 想象一下你要装修房子，但你不懂装修技术。这时候你需要一个项目经理来帮你：

@@ -3,7 +3,9 @@ layout: post
 title: "OpenCode 分离式配置系统核心指南"
 date: 2026-03-19 14:00:00 +0800
 ---
-# OpenCode 分离式配置系统核心指南
+
+Sign-off-by: 难易
+Assisted-by: OpenClaw:minimax/M2.7
 
 > 掌握 OpenCode 多级配置管理与智能合并策略
 
