@@ -5,6 +5,7 @@ date: 2026-03-20 15:00:00 +0800
 ---
 
 Sign-off-by: 难易
+
 Assisted-by: OpenClaw:minimax/M2.7 web_search
 
 *2026-03-20 更新：补充 ACP 协议技术细节与 OpenCode 实现分析*
