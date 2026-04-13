@@ -12,6 +12,67 @@ Assisted-by: OpenClaw:minimax/M2.7
 
 OpenClaw 是一个 AI 编程助手平台，支持多种交互方式。本文整理了最常用的快捷键和命令，帮助你提高效率。
 
+## 背景概念
+
+### 什么是 TUI？
+
+**TUI（Terminal UI）** 是 OpenClaw 的终端用户界面。通过命令行启动，直接在终端里运行：
+
+```bash
+openclaw tui
+```
+
+TUI 的特点：
+- 无需浏览器，在终端里直接对话
+- 支持所有快捷键和斜杠命令
+- 可以执行本地 Shell 命令
+- 适合开发者和技术用户
+
+### 什么是 Control UI？
+
+**Control UI** 是 OpenClaw 的网页控制界面，通常指浏览器的 WebChat 或控制台界面：
+
+```bash
+openclaw dashboard
+# 或直接打开浏览器访问
+```
+
+Control UI 的特点：
+- 通过浏览器访问，无需安装
+- 支持聊天、配置、监控等完整功能
+- 适合多设备使用
+- 可以管理多个 Agent 和会话
+
+### 什么是 Channel？
+
+**Channel（频道）** 是 OpenClaw 连接到不同消息平台的方式：
+
+| Channel | 说明 |
+|---------|------|
+| **Telegram** | 通过 Telegram Bot 对话 |
+| **WhatsApp** | 通过 WhatsApp 对话 |
+| **WebChat** | 网页端聊天界面 |
+| **Signal** | Signal 消息应用 |
+| **Discord** | Discord 服务器 |
+
+每个 Channel 可以独立配置，支持不同的交互方式。快捷键和斜杠命令在所有支持的环境中基本通用。
+
+### 什么是 Agent？
+
+**Agent** 是 OpenClaw 中的独立 AI 实例：
+- 每个 Agent 有自己的名称、配置和会话历史
+- 可以创建多个 Agent（如 `main`、`coding`、`research`）
+- 通过 `Ctrl+G` 或 `/agents` 切换
+
+### 什么是 Session？
+
+**Session（会话）** 是与 Agent 的对话上下文：
+- 每个 Agent 可以有多个会话
+- 会话保留对话历史
+- 通过 `Ctrl+P` 或 `/sessions` 切换
+
+---
+
 ## TUI 快捷键
 
 TUI（Terminal UI）是 OpenClaw 的终端界面，通过 `openclaw tui` 启动。
