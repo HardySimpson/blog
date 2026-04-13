@@ -40,6 +40,8 @@ while (true) {
 }
 ```
 
+> 源码：[session/prompt.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt.ts)
+
 这个循环实现了：
 
 - **上下文管理**：将代码库状态转换为LLM可理解的上下文
@@ -60,6 +62,8 @@ export function provider(model: Provider.Model) {
   // ...
 }
 ```
+
+> 源码：[session/system.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/system.ts)
 
 这种适配确保了：
 - 各模型的能力得到充分发挥
@@ -90,6 +94,8 @@ export async function isOverflow(input: { tokens: MessageV2.Assistant["tokens"];
 }
 ```
 
+> 源码：[session/compaction.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/compaction.ts)
+
 #### 2.2.2 智能裁剪 (Pruning)
 
 ```typescript
@@ -100,6 +106,8 @@ export async function prune(input: { sessionID: SessionID }) {
   // 对于更早的工具调用输出，如果超过40k tokens则裁剪
 }
 ```
+
+> 源码：[session/compaction.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/compaction.ts)
 
 关键策略：
 - **保留最近对话**：最近2轮用户-助手对话保持完整
@@ -120,6 +128,8 @@ Focus on:
 - What work has been completed?
 - Relevant files / directories`
 ```
+
+> 源码：[session/compaction.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/compaction.ts)
 
 这相当于将长对话"压缩"为一个结构化的摘要，保留关键信息。
 
@@ -162,6 +172,8 @@ const defaults = PermissionNext.fromConfig({
 })
 ```
 
+> 源码：[agent/agent.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/agent/agent.ts)
+
 权限分类：
 - **allow**：自动执行
 - **ask**：需要用户确认
@@ -181,6 +193,8 @@ if (errors.length > 0) {
   output += `\nLSP errors detected in this file, please fix:\n<diagnostics>...`
 }
 ```
+
+> 源码：[tool/write.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/tool/write.ts)
 
 **输入**：
 - 无显式输入参数（直接获取当前所有文件的诊断状态）
@@ -236,6 +250,8 @@ if (
 }
 ```
 
+> 源码：[session/processor.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/processor.ts)
+
 这防止了Agent陷入重复调用同一工具的无限循环。
 
 #### 3.2.4 Snapshot版本跟踪
@@ -250,6 +266,8 @@ export async function track() {
   return hash.trim()
 }
 ```
+
+> 源码：[snapshot/index.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/snapshot/index.ts)
 
 每个执行步骤都有快照记录，支持：
 - 查看每个步骤修改了哪些文件
@@ -267,6 +285,8 @@ export async function revert(input: RevertInput) {
   // 清理相关的消息历史
 }
 ```
+
+> 源码：[session/revert.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/revert.ts)
 
 用户可以撤销任意步骤的操作，系统会：
 - 恢复文件到之前的状态
@@ -287,6 +307,8 @@ toolInfo.execute = async (args, ctx) => {
   const result = await execute(args, ctx)
 }
 ```
+
+> 源码：[tool/tool.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/tool/tool.ts)
 
 LLM生成的工具调用参数会经过严格验证，不符合schema的输入会被拒绝并要求重新生成。
 

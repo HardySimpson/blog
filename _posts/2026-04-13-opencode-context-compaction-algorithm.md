@@ -42,6 +42,8 @@ export async function isOverflow(input: {
 }
 ```
 
+> 源码：[session/compaction.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/compaction.ts)
+
 **触发条件**：
 - 已使用 token 数 ≥ 实际可用 token 数
 - 预留 `reserved` 通常为 2000-4000 tokens，用于容纳系统响应
@@ -156,6 +158,8 @@ interface MessageV2 {
   }
 }
 ```
+
+> 源码：[session/message-v2.ts](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/message-v2.ts)
 
 ### 4.2 Token 计算
 
