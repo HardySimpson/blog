@@ -9,31 +9,10 @@ collections:
   posts:
     output: true
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-
-# Minimal Mistakes theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "default"
-search: true
-
-# Site author
-author:
-  name: HardySimpson
-  bio: "技术实践者"
-  location: "Shanghai"
+# GitHub Pages supported theme
+theme: just-the-docs
 
 # Defaults
 defaults:
   - _posts:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+      layout: post
