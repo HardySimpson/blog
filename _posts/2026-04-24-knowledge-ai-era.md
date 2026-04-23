@@ -292,7 +292,7 @@ AI 时代，你不需要是天才读书人，也不需要是天才写作者。
 1. **鲁迅的旧学功底**：周作人《鲁迅的故家》、周树人《鲁迅自传》等文献记载，鲁迅十三岁能背诵整本《古文观止》，旧学功底在同代人中最为扎实之一。
 2. **芒格格栅理论**：Charlie Munger, "A Lesson on Elementary, Worldly Wisdom," 1994年威斯科金融大会演讲。另见《穷查理宝典》（Poor Charlie's Almanack）。
 3. **"能够改变你决策的知识，才是知识"**：芒格思想的延伸引用，非逐字引文。
-4. **Karpathy LLM Wiki**：https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f（GitHub Gist 在中国大陆访问受限）。
+4. **Karpathy LLM Wiki**：Karpathy 在 2024 年多次在 X (Twitter) 和技术社区分享了他的 LLM Wiki 系统设计，核心是 RAW/Wiki/Index 三层架构。具体实现代码可在 GitHub 搜索 "karpathy llm wiki" 找到社区复现版本。
 5. **《道德经》第一章**：原文可查北京大学藏西汉竹书本（帛书老子）与北大简本。
 6. **《道德经》第二十二章**："少则得，多则惑。"通行本（王弼本），传世版本一致。
 
