@@ -218,6 +218,14 @@ Get-Content "$env:LOCALAPPDATA\ai.opencode.desktop\logs\opencode-desktop_*.log" 
 2. [Rust tracing 库文档](https://docs.rs/tracing/latest/tracing/)
 3. [OpenCode 官方文档](https://opencode.ai/docs)
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/03/19/opencode-separated-configuration/" class="nav prev">← OpenCode 分离式配置系统核心指南</a> &nbsp;|&nbsp; <a href="/2026/03/20/acp-protocol-opencode-implementation/" class="nav next">ACP 协议解析：OpenCode 的 Agent 通信标准实现 →</a>
+    </div>
+</div>
+
 ---
 
 **最后更新**: 2026年3月19日  

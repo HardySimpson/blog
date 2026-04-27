@@ -264,6 +264,14 @@ opencode "$@"
 
 通过掌握 OpenCode 的分离式配置系统，您可以构建更加高效、一致和可维护的 AI 辅助开发环境。
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/03/19/agent-research-report/" class="nav prev">← OpenCode 学习：Agent在人-代码库-LLM对话中的角色调研报告</a> &nbsp;|&nbsp; <a href="/2026/03/19/opencode-windows-desktop-log/" class="nav next">OpenCode 学习：OpenCode Windows 版桌面版日志完全指南 →</a>
+    </div>
+</div>
+
 ---
 
 **最后更新**: 2026年3月19日  

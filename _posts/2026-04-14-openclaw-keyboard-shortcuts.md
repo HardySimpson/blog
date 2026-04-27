@@ -110,6 +110,14 @@ graph TB
     A2 --> S3
 ```
 
+<!-- series: OpenClaw 系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenClaw 系列</span>
+    <div class="series-links">
+        <a href="/2026/04/14/openclaw-binding-peer-channel-agent/" class="nav prev">← OpenClaw 核心概念理清：Binding、Peer、Channel、Agent 之间的关系</a>
+    </div>
+</div>
+
 ---
 
 ## TUI 快捷键

@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+"""Add prev/next navigation links to blog series."""
+import re
+from pathlib import Path
+
+BLOG_DIR = Path("/home/claw/.openclaw/workspace/coder/blog/_posts")
+
+# 定义系列（按时间顺序排列）
+SERIES = {
+    "opencode-learning": {
+        "name": "OpenCode 学习系列",
+        "posts": [
+            "2026-03-16-agent-workflow-explanation",
+            "2026-03-16-agentloop-opencode",
+            "2026-03-19-agent-research-report",
+            "2026-03-19-opencode-separated-configuration",
+            "2026-03-19-opencode-windows-desktop-log",
+            "2026-03-20-acp-protocol-opencode-implementation",
+        ],
+    },
+    "openclaw-series": {
+        "name": "OpenClaw 系列",
+        "posts": [
+            "2026-04-14-openclaw-binding-peer-channel-agent",
+            "2026-04-14-openclaw-keyboard-shortcuts",
+        ],
+    },
+    "tool-calling-series": {
+        "name": "工具调用机制对比系列",
+        "posts": [
+            "2026-04-21-effect-framework-vs-harness",
+            "2026-04-21-cli-pipe-model-implementation",
+            "2026-04-22-tool-calling-mechanism",
+            "2026-04-27-tool-calling-mechanism",
+        ],
+    },
+    "opencode-deep-dive": {
+        "name": "OpenCode 深度解析系列",
+        "posts": [
+            "2026-03-16-agentloop-opencode",
+            "2026-04-13-opencode-context-compaction-algorithm",
+        ],
+    },
+}
+
+
+def slug_to_url(slug: str) -> str:
+    """Convert slug to GitHub Pages URL."""
+    # Extract date and title from slug
+    m = re.match(r"(\d{4}-\d{2}-\d{2})-(.+)", slug)
+    if m:
+        date, title = m.groups()
+        parts = date.split("-")
+        return f"/{parts[0]}/{parts[1]}/{parts[2]}/{title}/"
+    return f"/{slug}/"
+
+
+def get_post_title(slug: str) -> str:
+    """Get post title from file."""
+    path = BLOG_DIR / f"{slug}.md"
+    if not path.exists():
+        return slug
+    content = path.read_text()
+    m = re.search(r'^title:\s*"([^"]+)"', content, re.MULTILINE)
+    return m.group(1) if m else slug
+
+
+def add_nav_to_post(slug: str, prev_slug: str | None, next_slug: str | None, series_name: str) -> None:
+    """Add prev/next navigation to a post."""
+    path = BLOG_DIR / f"{slug}.md"
+    if not path.exists():
+        print(f"  SKIP: {slug}.md not found")
+        return
+
+    content = path.read_text()
+
+    # Build navigation HTML
+    nav_parts = []
+    if prev_slug:
+        prev_title = get_post_title(prev_slug)
+        prev_url = slug_to_url(prev_slug)
+        nav_parts.append(
+            f'<a href="{prev_url}" class="nav prev">← {prev_title}</a>'
+        )
+    if next_slug:
+        next_title = get_post_title(next_slug)
+        next_url = slug_to_url(next_slug)
+        nav_parts.append(
+            f'<a href="{next_url}" class="nav next">{next_title} →</a>'
+        )
+
+    if not nav_parts:
+        return
+
+    nav_html = f"""
+<!-- series: {series_name} -->
+<div class="series-nav">
+    <span class="series-label">系列：{series_name}</span>
+    <div class="series-links">
+        {" &nbsp;|&nbsp; ".join(nav_parts)}
+    </div>
+</div>
+"""
+
+    # 检查是否已有导航
+    if "<!-- series:" in content and 'class="series-nav"' in content:
+        print(f"  SKIP: {slug}.md already has navigation")
+        return
+
+    # 插入到参考资料之前（最后一个 --- 分隔符之后）
+    # 找到最后的 --- 分隔符，在它之前插入
+    last_delim = content.rfind("\n---\n")
+    if last_delim == -1:
+        print(f"  SKIP: {slug}.md has no --- delimiter")
+        return
+
+    content = content[:last_delim] + nav_html + content[last_delim:]
+    path.write_text(content)
+    print(f"  ADDED: {slug}.md")
+
+
+def main():
+    print("Adding series navigation links...\n")
+
+    for series_id, series in SERIES.items():
+        print(f"Processing series: {series['name']}")
+        posts = series["posts"]
+        for i, slug in enumerate(posts):
+            prev_slug = posts[i - 1] if i > 0 else None
+            next_slug = posts[i + 1] if i < len(posts) - 1 else None
+            add_nav_to_post(slug, prev_slug, next_slug, series["name"])
+        print()
+
+    print("Done!")
+
+
+if __name__ == "__main__":
+    main()

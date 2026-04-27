@@ -124,6 +124,14 @@ AgentLoop 是 OpenCode 的核心，理解它的结构有助于：
 - 排查会话相关问题
 - 基于 OpenCode 构建自己的 Agent 系统
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/03/16/agent-workflow-explanation/" class="nav prev">← OpenCode 学习：Agent工作流程通俗解释</a> &nbsp;|&nbsp; <a href="/2026/03/19/agent-research-report/" class="nav next">OpenCode 学习：Agent在人-代码库-LLM对话中的角色调研报告 →</a>
+    </div>
+</div>
+
 ---
 
 ## 七、参考资料

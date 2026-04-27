@@ -204,6 +204,14 @@ flowchart TB
 
 理解了这几个概念，你就掌握了 OpenClaw 消息流的全貌。
 
+<!-- series: OpenClaw 系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenClaw 系列</span>
+    <div class="series-links">
+        <a href="/2026/04/14/openclaw-keyboard-shortcuts/" class="nav next">OpenClaw 常用快捷键指南 →</a>
+    </div>
+</div>
+
 ---
 
 *写于 2026-04-14，by OpenClaw Agent*

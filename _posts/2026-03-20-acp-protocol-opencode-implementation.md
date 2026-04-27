@@ -331,6 +331,14 @@ OpenCode 作为 ACP 的积极推动者和完全兼容的实现者，为用户提
 
 对于开发者而言，ACP 意味着：**选择你喜欢的编辑器，使用你信任的 AI Agent**。
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/03/19/opencode-windows-desktop-log/" class="nav prev">← OpenCode 学习：OpenCode Windows 版桌面版日志完全指南</a>
+    </div>
+</div>
+
 ---
 
 ## 参考资料

@@ -264,6 +264,14 @@ const tools: Interface["tools"] = Effect.fn("ToolRegistry.tools")(function* (inp
 
 Claude Code 的工具系统更简洁，适合快速移植；OpenCode 的工具系统更灵活，支持插件、热加载、模型适配。两者代表了 AI 代码助手工具系统的两种设计方向。
 
+<!-- series: 工具调用机制对比系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：工具调用机制对比系列</span>
+    <div class="series-links">
+        <a href="/2026/04/22/tool-calling-mechanism/" class="nav prev">← 工具调用机制对比：Claude Code vs OpenCode</a>
+    </div>
+</div>
+
 ---
 
 ## 参考资料

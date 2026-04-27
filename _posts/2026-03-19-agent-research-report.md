@@ -390,6 +390,14 @@ OpenCode的Agent设计遵循了一个平衡原则：
 - 对于复杂任务：Agent提供安全网（权限、诊断、回滚）
 - 对于超长对话：Agent智能压缩上下文
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/03/16/agentloop-opencode/" class="nav prev">← OpenCode 学习：AgentLoop 核心代码模块拆解</a> &nbsp;|&nbsp; <a href="/2026/03/19/opencode-separated-configuration/" class="nav next">OpenCode 分离式配置系统核心指南 →</a>
+    </div>
+</div>
+
 ---
 
 ## 附录：源代码链接
