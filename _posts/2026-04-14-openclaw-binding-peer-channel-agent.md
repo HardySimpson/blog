@@ -204,6 +204,8 @@ flowchart TB
 
 理解了这几个概念，你就掌握了 OpenClaw 消息流的全貌。
 
+</div>
+
 <!-- series: OpenClaw 系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenClaw 系列</span>

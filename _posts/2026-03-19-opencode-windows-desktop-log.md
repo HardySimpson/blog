@@ -218,6 +218,8 @@ Get-Content "$env:LOCALAPPDATA\ai.opencode.desktop\logs\opencode-desktop_*.log" 
 2. [Rust tracing 库文档](https://docs.rs/tracing/latest/tracing/)
 3. [OpenCode 官方文档](https://opencode.ai/docs)
 
+</div>
+
 <!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenCode 学习系列</span>

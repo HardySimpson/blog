@@ -355,6 +355,14 @@ AI 时代，你不需要是天才读书人，也不需要是天才写作者。
 
 先把自己的书架建好。先把自己的判断力练出来。然后，让 AI 成为你的延伸，而不是你的替代。
 
+<!-- series: AI 时代知识管理系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：AI 时代知识管理系列</span>
+    <div class="series-links">
+        <a href="/2026/04/24/historical-critiques/" class="nav next">如果历史上的思想家读了这篇博客 →</a>
+    </div>
+</div>
+
 ---
 
 ## 参考来源

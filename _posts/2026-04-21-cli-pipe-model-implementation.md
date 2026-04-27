@@ -311,9 +311,11 @@ Process Layer → 命令如何与系统交互
 2. **流式结果索引**：输出不直接进 Context，而是写入临时文件，只传引用
 3. **Tool 间通信协议**：让 Tools 可以直接交换数据，不需要都经过 Agent
 
-<!-- series: 工具调用机制对比系列 -->
+</div>
+
+<!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
-    <span class="series-label">系列：工具调用机制对比系列</span>
+    <span class="series-label">系列：OpenCode 学习系列</span>
     <div class="series-links">
         <a href="/2026/04/21/effect-framework-vs-harness/" class="nav prev">← Effect 框架 vs Harness：两种不同的 Agent 编程范式</a> &nbsp;|&nbsp; <a href="/2026/04/22/tool-calling-mechanism/" class="nav next">工具调用机制对比：Claude Code vs OpenCode →</a>
     </div>

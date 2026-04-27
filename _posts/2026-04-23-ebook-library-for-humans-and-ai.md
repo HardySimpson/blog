@@ -250,6 +250,14 @@ A: 可以用 Cloudflare Tunnel / frp 内网穿透，不暴露公网 IP 更安全
 
 A: 优先整理高频阅读的书，其他的先用 Douban/OL 插件自动匹配，慢慢来。
 
+<!-- series: 电子书知识库系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：电子书知识库系列</span>
+    <div class="series-links">
+        <a href="/2026/04/23/ebook-library-architecture/" class="nav prev">← 自托管电子书库的技术架构：Calibre-Web 部署实战</a> &nbsp;|&nbsp; <a href="/2026/04/23/personal-book-knowledge-base-ai-era/" class="nav next">个人书籍知识库——生命的细胞膜 →</a>
+    </div>
+</div>
+
 ---
 
 *有问题或建议？欢迎交流。*

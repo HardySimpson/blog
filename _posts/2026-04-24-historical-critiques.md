@@ -251,6 +251,14 @@ AI 会产生"幻觉"。AI 的训练数据是有偏的。AI 的推理过程是不
 
 ---
 
+<!-- series: AI 时代知识管理系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：AI 时代知识管理系列</span>
+    <div class="series-links">
+        <a href="/2026/04/24/knowledge-ai-era/" class="nav prev">← AI时代，为什么还需要自己的知识库</a>
+    </div>
+</div>
+
 ---
 
 *本文纯属虚构。思想家们的"评价"为作者的合理推断，不代表他们的真实观点。*

@@ -16,6 +16,11 @@ SERIES = {
             "2026-03-19-opencode-separated-configuration",
             "2026-03-19-opencode-windows-desktop-log",
             "2026-03-20-acp-protocol-opencode-implementation",
+            "2026-04-13-opencode-context-compaction-algorithm",
+            "2026-04-21-effect-framework-vs-harness",
+            "2026-04-21-cli-pipe-model-implementation",
+            "2026-04-22-tool-calling-mechanism",
+            "2026-04-27-tool-calling-mechanism",
         ],
     },
     "openclaw-series": {
@@ -25,20 +30,19 @@ SERIES = {
             "2026-04-14-openclaw-keyboard-shortcuts",
         ],
     },
-    "tool-calling-series": {
-        "name": "工具调用机制对比系列",
+    "ebook-knowledge": {
+        "name": "电子书知识库系列",
         "posts": [
-            "2026-04-21-effect-framework-vs-harness",
-            "2026-04-21-cli-pipe-model-implementation",
-            "2026-04-22-tool-calling-mechanism",
-            "2026-04-27-tool-calling-mechanism",
+            "2026-04-23-ebook-library-architecture",
+            "2026-04-23-ebook-library-for-humans-and-ai",
+            "2026-04-23-personal-book-knowledge-base-ai-era",
         ],
     },
-    "opencode-deep-dive": {
-        "name": "OpenCode 深度解析系列",
+    "knowledge-ai": {
+        "name": "AI 时代知识管理系列",
         "posts": [
-            "2026-03-16-agentloop-opencode",
-            "2026-04-13-opencode-context-compaction-algorithm",
+            "2026-04-24-knowledge-ai-era",
+            "2026-04-24-historical-critiques",
         ],
     },
 }
@@ -46,7 +50,6 @@ SERIES = {
 
 def slug_to_url(slug: str) -> str:
     """Convert slug to GitHub Pages URL."""
-    # Extract date and title from slug
     m = re.match(r"(\d{4}-\d{2}-\d{2})-(.+)", slug)
     if m:
         date, title = m.groups()
@@ -103,12 +106,11 @@ def add_nav_to_post(slug: str, prev_slug: str | None, next_slug: str | None, ser
 """
 
     # 检查是否已有导航
-    if "<!-- series:" in content and 'class="series-nav"' in content:
+    if '<!-- series:' in content and 'class="series-nav"' in content:
         print(f"  SKIP: {slug}.md already has navigation")
         return
 
     # 插入到参考资料之前（最后一个 --- 分隔符之后）
-    # 找到最后的 --- 分隔符，在它之前插入
     last_delim = content.rfind("\n---\n")
     if last_delim == -1:
         print(f"  SKIP: {slug}.md has no --- delimiter")

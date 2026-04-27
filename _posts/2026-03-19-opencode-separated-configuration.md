@@ -264,6 +264,8 @@ opencode "$@"
 
 通过掌握 OpenCode 的分离式配置系统，您可以构建更加高效、一致和可维护的 AI 辅助开发环境。
 
+</div>
+
 <!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenCode 学习系列</span>

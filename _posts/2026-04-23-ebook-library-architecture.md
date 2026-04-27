@@ -234,6 +234,14 @@ AI 能否理解你的书库，取决于元数据是否干净：
 2. **元数据持续维护**：新书入库自动补全元数据
 3. **OCR 处理**：对扫描版 PDF 进行文字识别，纳入自动修复流程
 
+<!-- series: 电子书知识库系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：电子书知识库系列</span>
+    <div class="series-links">
+        <a href="/2026/04/23/ebook-library-for-humans-and-ai/" class="nav next">如何构建对人类和 AI 都友好的电子书库 →</a>
+    </div>
+</div>
+
 ---
 
 ## 附录：项目地址

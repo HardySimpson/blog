@@ -239,9 +239,11 @@ export const truncate = (output: string, opts: TruncateOptions, agent: Agent.Inf
 - **Claude Code** 追求简单、稳定，工具定义以"快照"方式静态化，执行逻辑与声明分离，适合稳定场景
 - **OpenCode** 追求灵活、可扩展，Effect 系统提供强类型+声明式+可组合性，适合需要深度定制的 Agent 场景
 
-<!-- series: 工具调用机制对比系列 -->
+</div>
+
+<!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
-    <span class="series-label">系列：工具调用机制对比系列</span>
+    <span class="series-label">系列：OpenCode 学习系列</span>
     <div class="series-links">
         <a href="/2026/04/21/cli-pipe-model-implementation/" class="nav prev">← CLI 管道模型在 AI Agent 中的落地：Skills 与 Tools 的对接机制</a> &nbsp;|&nbsp; <a href="/2026/04/27/tool-calling-mechanism/" class="nav next">Claude Code vs OpenCode 工具调用机制对比分析 →</a>
     </div>
