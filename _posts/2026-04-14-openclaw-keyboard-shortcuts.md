@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OpenClaw 常用快捷键指南"
-category: Claw-Code
+category: AI编程
 date: 2026-04-14 06:20:00 +0800
 ---
 

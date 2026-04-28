@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ACP 协议解析：OpenCode 的 Agent 通信标准实现"
-category: OpenCode
+category: AI编程
 date: 2026-03-20 15:00:00 +0800
 ---
 

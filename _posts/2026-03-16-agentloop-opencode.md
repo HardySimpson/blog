@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OpenCode 学习：AgentLoop 核心代码模块拆解"
-category: OpenCode
+category: AI编程
 date: 2026-03-16 10:00:00 +0800
 ---
 

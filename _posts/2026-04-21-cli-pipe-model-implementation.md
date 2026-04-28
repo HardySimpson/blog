@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CLI 管道模型在 AI Agent 中的落地：Skills 与 Tools 的对接机制"
-category: AI-Agent
+category: AI编程
 date: 2026-04-21 10:04:00 +0800
 ---
 

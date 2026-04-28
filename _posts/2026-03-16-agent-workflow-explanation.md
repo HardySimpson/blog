@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "OpenCode 学习：Agent工作流程通俗解释"
-category: OpenCode
+category: AI编程
+# OLD: OpenCode
 date: 2026-03-16 16:24:00 +0800
 ---
 
