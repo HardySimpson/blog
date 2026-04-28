@@ -3,27 +3,45 @@ layout: default
 title: 首页
 ---
 
-<section class="section">
-  <h2>最新文章</h2>
-  {% if site.posts and site.posts.size > 0 %}
-  <ul class="post-list">
-    {% for post in site.posts %}
-    <li class="post-list-item">
-      <h3 class="post-list-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
-      <p class="post-list-meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </time>
-      </p>
-      <p class="post-list-excerpt">
-        {{ post.excerpt | strip_html | truncate: 160 }}
-      </p>
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>暂时还没有文章，快去 <code>_posts</code> 目录新建一篇吧。</p>
-  {% endif %}
-</section>
+<h2 id="page-title">📝 全部文章</h2>
+
+{% if site.posts and site.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-list-item" data-category="{{ post.category }}">
+    <h3 class="post-list-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <p class="post-list-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%Y-%m-%d" }}
+      </time>
+      {% if post.category %}
+      · <span class="post-category">{{ post.category }}</span>
+      {% endif %}
+    </p>
+    <p class="post-list-excerpt">
+      {{ post.excerpt | strip_html | truncate: 160 }}
+    </p>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>暂时还没有文章，快去 <code>_posts</code> 目录新建一篇吧。</p>
+{% endif %}
+
+<script>
+// Category filtering via URL parameter
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('category');
+  if (cat) {
+    document.getElementById('page-title').textContent = '📂 ' + cat;
+    document.querySelectorAll('.post-list-item').forEach(item => {
+      if (item.dataset.category !== cat) {
+        item.style.display = 'none';
+      }
+    });
+  }
+})();
+</script>

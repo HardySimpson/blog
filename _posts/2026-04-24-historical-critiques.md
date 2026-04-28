@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "如果历史上的思想家读了这篇博客"
+category: 杂文
 date: 2026-04-24 03:23:00 +0800
 author: 难易
 ---

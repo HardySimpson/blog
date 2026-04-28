@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "AI时代，为什么还需要自己的知识库"
+category: 电子书
 date: 2026-04-24 03:07:00 +0800
 author: 难易
 ---

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OpenCode 上下文压缩算法深度解析"
+category: OpenCode
 date: 2026-04-13 10:00:00 +0800
 ---
 

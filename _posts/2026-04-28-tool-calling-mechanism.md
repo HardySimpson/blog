@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Claude Code vs OpenCode：工具调用机制深度对比"
+category: AI-Agent
 date: 2026-04-28 08:00:00 +0800
 ---
 

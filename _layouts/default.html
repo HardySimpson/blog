@@ -5,22 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <style>
+    /* === 文章页：全文阅读模式 === */
+    body.page-post .wrapper {
+      max-width: 1100px;
+    }
+    body.page-post header {
+      position: static;
+      width: 100%;
+      float: none;
+      text-align: center;
+      padding: 20px 0 10px;
+      border-bottom: 1px solid #e5e5e5;
+      margin-bottom: 20px;
+    }
+    body.page-post header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+    body.page-post header h1 a {
+      color: #222;
+    }
+    body.page-post header p,
+    body.page-post header h3,
+    body.page-post header nav {
+      display: none;
+    }
+    body.page-post section {
+      width: 100%;
+      float: none;
+    }
+    body.page-post footer {
+      position: static;
+      width: 100%;
+      float: none;
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 20px;
+      margin-top: 40px;
+    }
+
+    /* === 首页侧边栏美化 === */
+    body.page-home header p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    body.page-home header h3 {
+      font-size: 14px;
+      color: #393939;
+      margin: 20px 0 10px;
+    }
+    body.page-home header nav a {
+      display: inline-block;
+      font-size: 13px;
+      padding: 4px 0;
+      color: #555;
+    }
+    body.page-home header nav a:hover {
+      color: #069;
+    }
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .category-list li {
+      padding: 3px 0;
+    }
+    .category-list a {
+      font-size: 13px;
+    }
+    .category-count {
+      color: #999;
+      font-size: 11px;
+      margin-left: 4px;
+    }
+
+    /* === 文章列表页 === */
+    .section h2 {
+      font-size: 20px;
+      color: #393939;
+    }
+    .post-list {
+      list-style: none;
+      padding: 0;
+    }
+    .post-list-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .post-list-item:last-child {
+      border-bottom: none;
+    }
+    .post-list-title {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    .post-list-title a {
+      color: #267CB9;
+    }
+    .post-list-meta {
+      margin: 0 0 4px;
+      font-size: 12px;
+      color: #999;
+    }
+    .post-list-excerpt {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+  </style>
 </head>
-<body>
+<body class="{% if page.layout == 'post' %}page-post{% else %}page-home{% endif %}">
   <div class="wrapper">
     <header>
       <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
       <p>{{ site.description }}</p>
 
-      <h3>文章分类</h3>
+      <h3>📂 分类</h3>
       <nav>
-        <a href="{{ "/" | relative_url }}">首页</a><br>
-        <a href="{{ "/about.html" | relative_url }}">关于</a>
+        <ul class="category-list">
+        {% for category in site.categories %}
+          {% assign cat_name = category[0] %}
+          {% assign cat_size = category[1].size %}
+          <li>
+            <a href="{{ "/" | relative_url }}?category={{ cat_name | url_encode }}">{{ cat_name }}</a>
+            <span class="category-count">({{ cat_size }})</span>
+          </li>
+        {% endfor %}
+        </ul>
+      </nav>
+
+      <h3>🔗 链接</h3>
+      <nav>
+        <a href="{{ "/" | relative_url }}">🏠 首页</a><br>
+        <a href="{{ "/about.html" | relative_url }}">📄 关于</a>
       </nav>
     </header>
 
     <section>
+      <div class="section">
       {{ content }}
+      </div>
     </section>
 
     <footer>

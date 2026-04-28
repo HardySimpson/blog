@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Effect 框架 vs Harness：两种不同的 Agent 编程范式"
+category: AI-Agent
 date: 2026-04-21 10:41:00 +0800
 ---
 

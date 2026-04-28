@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OpenCode 分离式配置系统核心指南"
+category: OpenCode
 date: 2026-03-19 14:00:00 +0800
 ---
 

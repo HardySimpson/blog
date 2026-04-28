@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Agent 会话生命周期管理：Claw-Code（Rust）与 OpenCode（TypeScript）的对比分析"
+category: 综合对比
 date: 2026-04-28 10:00:00 +0800
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "自托管电子书库的技术架构：Calibre-Web 部署实战"
+category: 电子书
 date: 2026-04-23 06:50:00 +0800
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OpenCode 学习：Agent在人-代码库-LLM对话中的角色调研报告"
+category: OpenCode
 date: 2026-03-19 13:00:00 +0800
 ---
 
