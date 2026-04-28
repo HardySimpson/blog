@@ -6,7 +6,7 @@ excerpt: "如何构建对人类和 AI 都友好的个人电子书库"
 date: 2026-04-23 06:15:00 +0800
 ---
 
-Sign-off-by: 钟成
+Sign-off-by: 难易
 
 Assisted-by: OpenClaw:minimax/M2.7
 

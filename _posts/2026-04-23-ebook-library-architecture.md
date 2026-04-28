@@ -6,7 +6,7 @@ excerpt: "自托管电子书库的技术架构：Calibre-Web 部署实战"
 date: 2026-04-23 06:50:00 +0800
 ---
 
-Sign-off-by: 钟成
+Sign-off-by: 难易
 
 Assisted-by: OpenClaw:minimax/M2.7
 
