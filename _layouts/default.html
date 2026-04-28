@@ -7,16 +7,28 @@
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <body>
-  <header>
-    <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
-  </header>
+  <div class="wrapper">
+    <header>
+      <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+      <p>{{ site.description }}</p>
 
-  <main>
-    {{ content }}
-  </main>
+      <h3>文章分类</h3>
+      <nav>
+        <a href="{{ "/" | relative_url }}">首页</a><br>
+        <a href="{{ "/about.html" | relative_url }}">关于</a>
+      </nav>
+    </header>
 
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</p>
-  </footer>
+    <section>
+      {{ content }}
+    </section>
+
+    <footer>
+      <p>&copy; {{ site.time | date: "%Y" }} {% if site.author.name %}{{ site.author.name }}{% else %}难易{% endif %}</p>
+      {% if site.github %}
+      <p><small>Hosted on GitHub Pages</small></p>
+      {% endif %}
+    </footer>
+  </div>
 </body>
 </html>
