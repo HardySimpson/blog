@@ -2,6 +2,7 @@
 layout: post
 title: "OpenCode 分离式配置系统核心指南"
 category: AI编程
+excerpt: "掌握 OpenCode 多级配置管理与智能合并策略"
 date: 2026-03-19 14:00:00 +0800
 ---
 

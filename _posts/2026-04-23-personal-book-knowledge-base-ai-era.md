@@ -2,6 +2,7 @@
 layout: post
 title: "个人书籍知识库——生命的细胞膜"
 category: AI时代知识库
+excerpt: "个人书籍知识库——AI 时代的知识细胞膜"
 date: 2026-04-23 21:05:00 +0800
 author: 难易
 ---

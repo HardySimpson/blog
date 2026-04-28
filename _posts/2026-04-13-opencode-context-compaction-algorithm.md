@@ -2,6 +2,7 @@
 layout: post
 title: "OpenCode 上下文压缩算法深度解析"
 category: AI编程
+excerpt: "OpenCode 上下文压缩算法深度解析，含 Claude Code 对比与 Harness 架构"
 date: 2026-04-13 10:00:00 +0800
 ---
 

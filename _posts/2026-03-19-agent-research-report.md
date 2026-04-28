@@ -2,6 +2,7 @@
 layout: post
 title: "OpenCode 学习：Agent在人-代码库-LLM对话中的角色调研报告"
 category: AI编程
+excerpt: "基于 OpenCode 源码分析 Agent 在人、代码库、LLM 对话中的角色定位"
 date: 2026-03-19 13:00:00 +0800
 ---
 

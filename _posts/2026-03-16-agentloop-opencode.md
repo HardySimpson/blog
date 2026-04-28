@@ -2,6 +2,7 @@
 layout: post
 title: "OpenCode 学习：AgentLoop 核心代码模块拆解"
 category: AI编程
+excerpt: "深度拆解 OpenCode 的 AgentLoop 核心循环，理解 AI 编程助手如何不断调用 LLM 并执行工具"
 date: 2026-03-16 10:00:00 +0800
 ---
 

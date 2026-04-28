@@ -2,6 +2,7 @@
 layout: post
 title: "OpenCode 学习：OpenCode Windows 版桌面版日志完全指南"
 category: AI编程
+excerpt: "深入解析 OpenCode 桌面版的日志系统，解决日志去哪儿了的困惑"
 date: 2026-03-19 13:00:00 +0800
 ---
 

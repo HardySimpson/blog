@@ -2,6 +2,7 @@
 layout: post
 title: "工具调用机制对比：Claude Code vs OpenCode"
 category: AI编程
+excerpt: "工具调用机制对比：Claude Code vs OpenCode 的设计差异"
 date: 2026-04-22 08:00:00 +0800
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: "OpenClaw 核心概念理清：Binding、Peer、Channel、Agent 之间的关系"
 category: AI编程
+excerpt: "理清 OpenClaw 核心概念：Binding、Peer、Channel、Agent 之间的关系"
 date: 2026-04-14 09:32:00 +0800
 ---
 

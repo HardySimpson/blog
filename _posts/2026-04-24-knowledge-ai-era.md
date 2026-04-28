@@ -2,6 +2,7 @@
 layout: post
 title: "AI时代，为什么还需要自己的知识库"
 category: AI时代知识库
+excerpt: "AI 时代为什么还需要自己的知识库"
 date: 2026-04-24 03:07:00 +0800
 author: 难易
 ---

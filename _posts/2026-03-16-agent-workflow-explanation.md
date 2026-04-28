@@ -3,6 +3,7 @@ layout: post
 title: "OpenCode 学习：Agent工作流程通俗解释"
 category: AI编程
 # OLD: OpenCode
+excerpt: "Agent就像你的技术项目经理——理解 AI Agent 的工作流程"
 date: 2026-03-16 16:24:00 +0800
 ---
 

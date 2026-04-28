@@ -2,6 +2,7 @@
 layout: post
 title: "OpenClaw 常用快捷键指南"
 category: 龙虾养殖
+excerpt: "OpenClaw 常用快捷键指南，提高操作效率"
 date: 2026-04-14 06:20:00 +0800
 ---
 
