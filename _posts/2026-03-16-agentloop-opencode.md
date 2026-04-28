@@ -126,6 +126,8 @@ AgentLoop 是 OpenCode 的核心，理解它的结构有助于：
 
 </div>
 
+</div>
+
 <!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenCode 学习系列</span>

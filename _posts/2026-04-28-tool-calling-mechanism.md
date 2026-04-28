@@ -442,6 +442,14 @@ OpenCode 则展示了更成熟的工程实践：基于 Effect 的函数式编程
 
 对于工具调用机制的设计，核心权衡在于：**静态快照适合迁移过渡，动态注册适合生产迭代**。Claude Code 选择前者是因为正在进行的语言迁移；OpenCode 选择后者是因为从一开始就是生产系统。
 
+<!-- series: OpenCode 学习系列 -->
+<div class="series-nav">
+    <span class="series-label">系列：OpenCode 学习系列</span>
+    <div class="series-links">
+        <a href="/2026/04/22/tool-calling-mechanism/" class="nav prev">← 工具调用机制对比：Claude Code vs OpenCode</a>
+    </div>
+</div>
+
 ---
 
 ## 参考资料

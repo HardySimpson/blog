@@ -333,6 +333,8 @@ OpenCode 作为 ACP 的积极推动者和完全兼容的实现者，为用户提
 
 </div>
 
+</div>
+
 <!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenCode 学习系列</span>

@@ -206,6 +206,8 @@ flowchart TB
 
 </div>
 
+</div>
+
 <!-- series: OpenClaw 系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenClaw 系列</span>

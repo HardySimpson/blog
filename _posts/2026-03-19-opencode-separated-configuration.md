@@ -266,6 +266,8 @@ opencode "$@"
 
 </div>
 
+</div>
+
 <!-- series: OpenCode 学习系列 -->
 <div class="series-nav">
     <span class="series-label">系列：OpenCode 学习系列</span>

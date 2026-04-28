@@ -20,7 +20,7 @@ SERIES = {
             "2026-04-21-effect-framework-vs-harness",
             "2026-04-21-cli-pipe-model-implementation",
             "2026-04-22-tool-calling-mechanism",
-            "2026-04-27-tool-calling-mechanism",
+            "2026-04-28-tool-calling-mechanism",
         ],
     },
     "openclaw-series": {
