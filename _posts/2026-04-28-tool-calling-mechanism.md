@@ -6,7 +6,7 @@ excerpt: "Claude Code vs OpenCode：工具调用机制深度对比"
 date: 2026-04-28 08:00:00 +0800
 ---
 
-Sign-off-by: 4090龙虾
+Sign-off-by: 难易
 
 Assisted-by: OpenClaw:minimax/M2.7
 
