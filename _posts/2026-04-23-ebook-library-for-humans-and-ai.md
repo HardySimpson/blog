@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "如何构建对人类和 AI 都友好的电子书库"
-category: 电子书
+category: AI时代知识库
 date: 2026-04-23 06:15:00 +0800
 ---
 

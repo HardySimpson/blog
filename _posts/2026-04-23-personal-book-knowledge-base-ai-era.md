@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "个人书籍知识库——生命的细胞膜"
-category: 电子书
+category: AI时代知识库
 date: 2026-04-23 21:05:00 +0800
 author: 难易
 ---
