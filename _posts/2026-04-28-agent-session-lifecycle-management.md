@@ -3,9 +3,11 @@ layout: post
 title: "Agent 会话生命周期管理：Claw-Code（Rust）与 OpenCode（TypeScript）的对比分析"
 category: AI编程
 date: 2026-04-28 10:00:00 +0800
+excerpt: ""
 ---
 
 Sign-off-by: 难易
+
 Assisted-by: Hermes:deepseek-v4-flash
 
 AI Coding Agent 的核心是"循环调用 LLM + 工具执行"，而支撑这个循环的基础设施之一是**会话（Session）管理系统**。Agent 需要记住对话历史、追踪工具调用的结果、支持回退操作、在崩溃后恢复状态——这些都依赖一个健壮的会话生命周期管理。

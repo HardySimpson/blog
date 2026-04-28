@@ -3,9 +3,11 @@ layout: post
 title: "龙虾养殖与 AI 编程工具怎么对接——聊聊 ACP 协议的跨领域启示"
 category: 龙虾养殖
 date: 2026-04-28 14:00:00 +0800
+excerpt: ""
 ---
 
 Sign-off-by: 难易
+
 Assisted-by: Hermes:deepseek-v4-flash
 
 你可能在纳闷：一个讲 AI 编程工具的博客，突然冒出个"龙虾养殖"分类是怎么回事？
