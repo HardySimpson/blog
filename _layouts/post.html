@@ -12,6 +12,10 @@ layout: default
   </div>
 </article>
 
+<div class="back-home">
+  <a href="{{ "/" | relative_url }}">← 返回主页</a>
+</div>
+
 <style>
   .post-header { margin-bottom: 2em; }
   .post-title { font-size: 2em; margin-bottom: 0.5em; }
@@ -66,6 +70,20 @@ layout: default
     text-decoration: none;
   }
   .series-links .nav:hover {
+    text-decoration: underline;
+  }
+  .back-home {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+  }
+  .back-home a {
+    color: #267CB9;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .back-home a:hover {
     text-decoration: underline;
   }
 </style>
