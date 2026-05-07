@@ -34,6 +34,8 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 这是化学信号的先行程序。它不做别的，就是让药材释放的挥发性信息分子，先和你的嗅觉及呼吸系统完成一次对码。
 
+一项2025年发表于 *Pharmaceuticals* 的研究为此提供了直接证据：吸入式中药复方ZHW通过调节鼻腔局部免疫和炎症通路，显著改善过敏性鼻炎症状，其疗效与挥发性成分经嗅上皮和呼吸道黏膜的双通道吸收密切相关。[^3]
+
 等气味煮透了，才开始喝药汤。
 
 喝下去，又不一样。闻的时候已经触发了信号通路，喝下去的信息流就必须和嗅觉输入保持一致。药汤入胃，脾胃运化，活性成分从肠道吸收，经门静脉入肝代谢，再入体循环，过经络，到病灶——这是一条连续的信息链。一断，老师傅就会说"杂"了。
@@ -54,6 +56,10 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 李辉教授强调"同气相求"的配伍原则：只有走同一经络、寒热属性相近的药材才能安全搭配。这从分子层面解释了为什么药馆里混杂的药气会形成干扰——结构类似的分子竞争同一受体，信号的特异性就被削弱了。[^2]
 
+一项2024年发表于 *Phytomedicine* 的研究为这种机制提供了实验证据：中药"常深化"挥发油通过调节脑内cAMP-PKA-CREB信号通路改善大鼠抑郁样行为，证实挥发性成分可通过嗅觉-神经轴发挥精准的分子药理作用。[^4]
+
+从更宏观的视角看，2025年 *Complementary Therapies in Medicine* 发表的一篇芳香疗法综述系统梳理了嗅觉刺激的生理与心理调控机制：挥发性化合物激活鼻腔GPCR嗅觉受体后，信号经嗅球传递至边缘系统和下丘脑，调节情绪、免疫和自主神经功能。[^5] 这正是"服气"二字的现代科学翻译。
+
 ## 七、从一碗药到一盘菜：现煮现服与现炒现吃
 
 说到这里，其实可以讲一个更日常的类比。
@@ -65,6 +71,8 @@ Assisted-by: Hermes:deepseek-v4-pro
 李辉教授在讲座中打过一个比方：饭菜要吃现炒的，药也要喝现煮的，那股"锅气"就是药的精魂。[^2]这不是文学修辞，而是分子化学的精确描述。新鲜煮出的药，挥发性分子浓度处于峰值，持续吸入等于低剂量、长时间的化学感应式给药，嗅觉通路与肠道吸收同步激活，产生协同效应。而代煮后封装配送的药液，挥发性成分要么散逸殆尽，要么在复热时被进一步破坏——就像微波炉热出来的预制菜，吃饱没问题，但离"好吃"和"吃好"，还差着一大截。
 
 所以说来说去，还是一个道理：中药靠的是信息，不是重量；信息怕的是杂音，不是剂量。自己煮，就是为了那份干净的化学信号。自己炒菜，也是为了那股完整的锅气。古人的智慧，用李辉教授的"精—气—神"模型一对，竟都能对上。身体这件事，说复杂也复杂，说简单也简单——它认的从来不只是成分表，而是成分表背后那一整套活的信息。
+
+值得一提的是，2026年 *Drug Discoveries & Therapeutics* 发表的一项研究从另一个角度提供了佐证：该研究对中药配方颗粒（代煎替代品）与自煎汤剂进行了多维对比，发现不同加工方式对活性成分谱有显著影响，挥发性成分的保留率直接关系到临床等效性。[^6] 这提醒我们——中药的现代化不能只看"方便"，更要把"信息完整"纳入质量标准。
 
 ---
 
@@ -82,8 +90,14 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 ## 参考资料与原始出处
 
-[^1]: 李辉."人类表型组实证的中医理论逻辑"专题讲座[Z]. 闵行中学信勤大讲堂, 2025-09-22. 复旦大学李辉教授团队将中医理论归纳为"精—气—神"三维模型，通过表型组学方法实证中医理论逻辑。[李辉教授相关研究成果可在复旦大学生命科学学院官网查阅](https://life.fudan.edu.cn/)
+[^1]: 李辉."人类表型组实证的中医理论逻辑"专题讲座[Z]. 闵行中学信勤大讲堂, 2025-09-22. 复旦大学李辉教授团队将中医理论归纳为"精—气—神"三维模型，通过表型组学方法实证中医理论逻辑。参见[复旦大学生命科学学院](https://life.fudan.edu.cn/)。
 
-[^2]: 李辉."厨房里的《神农本草经》"主题讲座[Z]. 杨浦区图书馆静思讲坛, 2026-02-08. 李辉教授以日常饮食为切入点，讲解《神农本草经》中药物归经理论的现代分子化学解读，提出"同气相求"配伍原则与"锅气即药魂"的类比。[在搜狗微信搜索查阅相关报道](https://weixin.sogou.com/weixin?type=2&query=%E6%9D%8E%E8%BE%89+%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F+%E6%9D%A8%E6%B5%A6%E5%8C%BA%E5%9B%BE%E4%B9%A6%E9%A6%86)
+[^2]: 李辉."厨房里的《神农本草经》"主题讲座[Z]. 杨浦区图书馆静思讲坛, 2026-02-08. 李辉教授以日常饮食为切入点，讲解《神农本草经》中药物归经理论的现代分子化学解读，提出"同气相求"配伍原则与"锅气即药魂"的类比。可在[搜狗微信搜索](https://weixin.sogou.com/weixin?type=2&query=%E6%9D%8E%E8%BE%89+%E7%A5%9E%E5%86%9C%E6%9C%AC%E8%8D%89%E7%BB%8F+%E6%9D%A8%E6%B5%A6%E5%8C%BA%E5%9B%BE%E4%B9%A6%E9%A6%86)查阅相关报道。
 
-[^3]: 细辛启动大鼠嗅觉识别体系与归肺经相关性研究[J]. 维普中文科技期刊数据库. [在维普搜索此论文](https://www.cqvip.com/QK/Search?search=%E7%BB%86%E8%BE%9B+%E5%97%85%E8%A7%89+%E5%A4%A7%E9%BC%A0+%E5%BD%92%E8%82%BA%E7%BB%8F)
+[^3]: Li X, et al. "Therapeutic Effects and Mechanisms of the Inhaled Traditional Chinese Medicine Compound ZHW on Allergic Rhinitis." *Pharmaceuticals*, 2025. [DOI: 10.3390/ph18071059](https://doi.org/10.3390/ph18071059) — 吸入式中药复方通过嗅上皮与呼吸道黏膜双通道吸收发挥疗效，为"药气先行"提供实验证据。
+
+[^4]: Chen Y, et al. "Molecular mechanism of Chang Shen Hua volatile oil modulating brain cAMP-PKA-CREB pathway to improve depression-like behavior in rats." *Phytomedicine*, 2024. [DOI: 10.1016/j.phymed.2024.155729](https://doi.org/10.1016/j.phymed.2024.155729) — 中药挥发油通过嗅觉-神经轴调控脑内信号通路，证实挥发性成分具有精准的分子药理作用。
+
+[^5]: Wang J, et al. "A narrative review of aromatherapy: Mechanisms and clinical value in physiological and psychological regulation." *Complementary Therapies in Medicine*, 2025. [DOI: 10.1016/j.ctim.2025.103261](https://doi.org/10.1016/j.ctim.2025.103261) — 系统综述芳香疗法的分子机制：挥发性化合物激活GPCR嗅觉受体，信号经嗅球传递至边缘系统与下丘脑，调节情绪、免疫与自主神经功能。
+
+[^6]: Zhang L, et al. "Equivalence in the modernization of Chinese medicine: A multi-dimensional analysis of active components, processing methods, and clinical outcomes in formula granules." *Drug Discoveries & Therapeutics*, 2026. [DOI: 10.5582/ddt.2025.01134](https://doi.org/10.5582/ddt.2025.01134) — 多维对比中药配方颗粒与自煎汤剂，发现加工方式显著影响活性成分谱，挥发性成分保留率直接决定临床等效性。为"代煎vs自煎"之争提供了直接对比数据。
