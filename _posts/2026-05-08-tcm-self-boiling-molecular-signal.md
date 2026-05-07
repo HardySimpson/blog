@@ -12,6 +12,8 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 ---
 
+![中药自煮](https://hardysimpson.github.io/blog/images/tcm-self-boiling.jpg)
+
 ## 一、问题的提出
 
 以前有人说，中药煮着喝，最好是自己在家煮。这话听起来惹人烦。药馆代煮得好好的，拿回来热一下就行，何必自己费工夫？
