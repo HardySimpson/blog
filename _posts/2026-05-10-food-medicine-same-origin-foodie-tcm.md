@@ -11,7 +11,7 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 ---
 
-![药食同源](https://hardysimpson.github.io/blog/images/tcm-self-boiling.jpg)
+![药食同源](https://hardysimpson.github.io/blog/images/food-medicine-wok-steam.jpg)
 
 每次点外卖，你是不是都会嘀咕一句："哎，不如现炒的好吃。"
 
