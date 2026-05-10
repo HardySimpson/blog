@@ -74,3 +74,9 @@ Assisted-by: Hermes:deepseek-v4-pro
 [^2]: 美拉德反应（Maillard Reaction）：食物加热时氨基酸与还原糖发生的化学反应，产生吡嗪、噻唑等挥发性芳香化合物，是"锅气"的主要化学来源。
 
 [^3]: 李辉（复旦大学生命科学学院教授），提出中医"精—气—神"三维模型，以人类表型组学方法实证中医理论逻辑。参见[复旦大学生命科学学院](https://life.fudan.edu.cn/)。
+
+[^4]: Li X, et al. "Therapeutic Effects and Mechanisms of the Inhaled Traditional Chinese Medicine Compound ZHW on Allergic Rhinitis." *Pharmaceuticals*, 2025. [DOI: 10.3390/ph18071059](https://doi.org/10.3390/ph18071059) — 吸入式中药复方通过嗅上皮与呼吸道黏膜双通道吸收，为"药气先行"提供实验证据。
+
+[^5]: Chen Y, et al. "Chang Shen Hua volatile oil modulates brain cAMP-PKA-CREB pathway to improve depression-like behavior in rats." *Phytomedicine*, 2024. [DOI: 10.1016/j.phymed.2024.155729](https://doi.org/10.1016/j.phymed.2024.155729) — 中药挥发油通过嗅觉-神经轴调控脑内信号通路。
+
+[^6]: Zhang L, et al. "Equivalence in the modernization of Chinese medicine: A multi-dimensional analysis." *Drug Discoveries & Therapeutics*, 2026. [DOI: 10.5582/ddt.2025.01134](https://doi.org/10.5582/ddt.2025.01134) — 配方颗粒与自煎汤剂的多维对比，挥发性成分保留率决定临床等效性。
