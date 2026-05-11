@@ -14,6 +14,8 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 ## 一、一个问题
 
+> 本文是对钟成《内家运动三定律与现代物理学范式》（《武术研究》2026年第3期）[^2]的科普化讲解。原文为学术论文，本文用通俗语言重述其核心观点，并辅以背景知识说明。
+
 你看过一个好的太极拳师傅打拳吗？
 
 不是公园里比划的那种。是真正练了几十年的。你看他抬手、转身、落步——每个动作都慢，但慢得不拖；每个动作都柔，但柔得不散。最奇怪的是：你看他打了十分钟，他不喘，不累，额头没有汗，呼吸还是平稳的，好像他不是在运动，而是在休息。
@@ -132,7 +134,7 @@ $$ H = T_{kinetic} + V_{gravitational} + V_{elastic} \approx constant $$
 
 [^1]: Emmy Noether. "Invariante Variationsprobleme." *Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse*, 1918: 235–257. 诺特第一定理的原始论文：每一个作用量的连续对称性都对应一个守恒流。
 
-[^2]: 钟成. "内家运动三定律与现代物理学范式." *武术研究*, 2025. 本文所属的原始学术论文，首次提出将诺特定理与哈密顿力学应用于内家拳运动分析，推导出内家运动三定律。
+[^2]: 钟成. "内家运动三定律与现代物理学范式." *武术研究*, 2026(3). 本文系列文章所依据的原始学术论文，首次提出将诺特定理与哈密顿力学应用于内家拳运动分析，推导出内家运动三定律。
 
 [^3]: Landau, L.D. & Lifshitz, E.M. *Mechanics*, 3rd ed. Butterworth-Heinemann, 1976. 经典力学标准教材，第 2 章详述诺特定理在拉格朗日与哈密顿力学框架下的推导与应用。
 
