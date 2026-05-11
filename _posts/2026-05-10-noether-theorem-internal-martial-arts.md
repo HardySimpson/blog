@@ -12,7 +12,7 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 ---
 
-![内家运动三定律与现代物理学范式示意](/images/noether-tai-chi-cover.jpg)
+![内家运动三定律与现代物理学范式示意](https://hardysimpson.github.io/blog/images/noether-tai-chi-cover.jpg)
 
 ## 一、一个问题
 
