@@ -106,8 +106,8 @@ html = html.strip()
 
 # === Step 4b: Add inline styles to headings ===
 # WeChat strips CSS classes but respects inline style
-html = re.sub(r'<h2[^>]*>', '<h2 style="font-size:2.4em;font-weight:bold;margin:1.4em 0 0.6em">', html)
-html = re.sub(r'<h3[^>]*>', '<h3 style="font-size:1.8em;font-weight:bold;margin:1em 0 0.5em">', html)
+html = re.sub(r'<h2[^>]*>', '<h2 style="font-size:1.8em;font-weight:bold;margin:1.2em 0 0.6em">', html)
+html = re.sub(r'<h3[^>]*>', '<h3 style="font-size:1.4em;font-weight:bold;margin:1em 0 0.5em">', html)
 
 # === Step 4b2: Style tables for WeChat ===
 html = re.sub(r'<table[^>]*>', '<table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.95em">', html)
