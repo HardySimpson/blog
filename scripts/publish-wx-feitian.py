@@ -47,8 +47,8 @@ with open("/tmp/wx_article_raw.html") as f:
     html = f.read()
 
 # Clean HTML for WeChat
-# Remove footnotes section (everything after ## 参考资料与原始出处)
-html = re.sub(r'<h2[^>]*>参考资料与原始出处.*', '', html, flags=re.DOTALL)
+# Remove pandoc footnote backlinks  
+html = re.sub(r'<a[^>]*>\u2191</a>', '', html)  # ↑ backlinks
 
 # Remove div/ol/li/sup/a/img tags
 html = re.sub(r'<div[^>]*>|</div>', '', html)
