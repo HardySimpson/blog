@@ -82,25 +82,13 @@ with open("/tmp/wx_article_raw.html") as f:
 # Remove pandoc footnote backlinks
 html = re.sub(r'<a[^>]*>\u2191</a>', '', html)
 
-# Remove div/ol/li/sup tags
+# Remove div/ol/li/sup tags (keep tables for WeChat)
 html = re.sub(r'<div[^>]*>|</div>', '', html)
 html = re.sub(r'<ol[^>]*>|</ol>', '', html)
 html = re.sub(r'<li[^>]*>|</li>', '', html)
 html = re.sub(r'<sup[^>]*>.*?</sup>', '', html, flags=re.DOTALL)
 html = re.sub(r'<hr\s*/?>', '', html)
 html = re.sub(r'<p>\s*</p>', '', html)
-html = re.sub(r'<table[^>]*>', '', html)
-html = re.sub(r'</table>', '', html)
-html = re.sub(r'<thead[^>]*>', '', html)
-html = re.sub(r'</thead>', '', html)
-html = re.sub(r'<tbody[^>]*>', '', html)
-html = re.sub(r'</tbody>', '', html)
-html = re.sub(r'<tr[^>]*>', '', html)
-html = re.sub(r'</tr>', '', html)
-html = re.sub(r'<td[^>]*>', '', html)
-html = re.sub(r'</td>', '', html)
-html = re.sub(r'<th[^>]*>', '', html)
-html = re.sub(r'</th>', '', html)
 
 # Keep <a> tags for WeChat links (don't strip them entirely)
 # Only strip backlinks (↑), keep readable links
@@ -116,8 +104,13 @@ html = html.strip()
 
 # === Step 4b: Add inline styles to headings ===
 # WeChat strips CSS classes but respects inline style
-html = re.sub(r'<h2>', '<h2 style="font-size:1.5em;font-weight:bold;margin:1.2em 0 0.6em">', html)
-html = re.sub(r'<h3>', '<h3 style="font-size:1.25em;font-weight:bold;margin:1em 0 0.5em">', html)
+html = re.sub(r'<h2>', '<h2 style="font-size:2em;font-weight:bold;margin:1.2em 0 0.6em">', html)
+html = re.sub(r'<h3>', '<h3 style="font-size:1.5em;font-weight:bold;margin:1em 0 0.5em">', html)
+
+# === Step 4b2: Style tables for WeChat ===
+html = re.sub(r'<table>', '<table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.95em">', html)
+html = re.sub(r'<th[^>]*>', '<th style="background-color:#f5f5f5;border:1px solid #ddd;padding:10px 12px;text-align:center;font-weight:bold">', html)
+html = re.sub(r'<td[^>]*>', '<td style="border:1px solid #ddd;padding:10px 12px">', html)
 
 # === Step 4c: Insert cover image at the top of body ===
 # WeChat body images must be uploaded via uploadimg API
