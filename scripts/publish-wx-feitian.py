@@ -96,9 +96,34 @@ html = re.sub(r'<thead[^>]*>|</thead>|<tbody[^>]*>|</tbody>', '', html)
 # Only strip backlinks (↑), keep readable links
 html = re.sub(r'<a[^>]*>\s*</a>', '', html)
 
-# Replace $$...$$ inline math with plain text
-html = re.sub(r'\$\$.*?\$\$', '', html, flags=re.DOTALL)
-html = re.sub(r'\$[^$]+\$', '', html)
+# Convert $$...$$ math to readable plain text instead of stripping
+def math_to_plain(m):
+    """Convert LaTeX math to readable plain text"""
+    tex = m.group(1)
+    # Common substitutions
+    tex = tex.replace('\\dot{q}', "q'")
+    tex = tex.replace('\\dot{p}', "p'")
+    tex = tex.replace('\\partial', '∂')
+    tex = tex.replace('\\frac{', '(')
+    tex = tex.replace('}{', ')/(')
+    tex = tex.replace('}', ')')
+    tex = tex.replace('\\left(', '(')
+    tex = tex.replace('\\right)', ')')
+    tex = tex.replace('\\approx', '≈')
+    tex = tex.replace('\\quad', '  ')
+    tex = tex.replace('\\cdot', '·')
+    tex = tex.replace('_{', '_')
+    tex = tex.replace('^{', '^')
+    tex = tex.replace('}', '')
+    tex = tex.replace('{', '')
+    tex = tex.replace('_kinetic', '动能')
+    tex = tex.replace('V_gravitational', 'V重力势能')
+    tex = tex.replace('V_elastic', 'V弹性势能')
+    tex = tex.replace('T_kinetic', 'T动能')
+    return tex.strip()
+
+html = re.sub(r'\$\$(.*?)\$\$', lambda m: math_to_plain(m), html, flags=re.DOTALL)
+html = re.sub(r'\$([^$]+)\$', lambda m: math_to_plain(m), html)
 
 # Remove empty <p> tags
 html = re.sub(r'<p>\s*</p>', '', html)
