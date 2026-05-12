@@ -19,15 +19,21 @@ print("   ✅")
 
 # === Step 2: Download blog post from GitHub ===
 print("📥 下载文章...")
-subprocess.run(["curl", "-sL", "-o", "/tmp/wx_article.md",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-10-noether-theorem-internal-martial-arts.md"], check=True)
+r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_article.md",
+    "https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-10-noether-theorem-internal-martial-arts.md"], capture_output=True, text=True)
+if r.returncode != 0:
+    print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
+    sys.exit(1)
 print("   ✅")
 
 # === Step 3: Download cover image ===
 print("🖼️  下载封面图...")
-subprocess.run(["curl", "-sL", "-o", "/tmp/wx_cover.jpg",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/images/noether-tai-chi-cover.jpg"], check=True)
-print("   ✅")
+r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_cover.jpg",
+    "https://raw.githubusercontent.com/HardySimpson/blog/main/images/noether-tai-chi-cover.jpg"], capture_output=True, text=True)
+if r.returncode != 0:
+    print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
+    sys.exit(1)
+print("   ✅", flush=True)
 
 # === Step 4: Prepare Markdown for WeChat ===
 print("🔄 处理 Markdown...")
@@ -141,7 +147,7 @@ html = re.sub(r'<td[^>]*>', '<td style="border:1px solid #d9d9d9;padding:10px 12
 
 # === Step 4c: Insert cover image at the top of body ===
 # WeChat body images must be uploaded via uploadimg API
-print("🖼️  上传正文图片...")
+print("🖼️  上传正文图片...", flush=True)
 resp = subprocess.run(["curl", "-s",
     f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={TOKEN}",
     "-F", "media=@/tmp/wx_cover.jpg"], capture_output=True, text=True)
