@@ -109,15 +109,16 @@ resp = subprocess.run(["curl", "-s",
     "-H", "Content-Type: application/json",
     "-d", "@/tmp/wx_draft.json"], capture_output=True, text=True)
 data = json.loads(resp.stdout)
-if data.get("errcode", -1) != 0:
+if "media_id" in data and "errcode" not in data:
+    draft_id = data["media_id"]
+    print(f"   ✅ draft_id: {draft_id}")
+    print(f"   📎 预览链接: https://mp.weixin.qq.com/cgi-bin/appmsg?media_id={draft_id}")
+elif data.get("errcode", -1) != 0:
     print(f"❌ 草稿创建失败: {data}")
     # Check if it's 40164 IP whitelist issue
     if data.get("errcode") == 40164:
         print("   → IP 不在白名单，需要加 IP 到微信后台")
     sys.exit(1)
-draft_id = data["media_id"]
-print(f"   ✅ draft_id: {draft_id}")
-print(f"   📎 预览链接: https://mp.weixin.qq.com/cgi-bin/appmsg?media_id={draft_id}")
 
 # === Step 7: Try to publish (may fail for unverified accounts) ===
 print("🚀 尝试发布...")
