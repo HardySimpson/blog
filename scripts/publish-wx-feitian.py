@@ -4,12 +4,12 @@ import sys, json, subprocess, os, re, time, base64
 
 APPID = "wx6f2600d3acf30196"
 APPSECRET = "72f3328bff546478913559b444d05c6b"
-TITLE = "诺特定理与内家拳：为什么对称性就是守恒"
+TITLE = "好动作是可逆的——费登奎斯问题与时间反演对称"
 AUTHOR = "难易"
 
 # === Step 1: Get access_token ===
 print("🔑 获取 access_token...")
-resp = subprocess.run(["curl", "-s", f"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={APPID}&secret={APPSECRET}"], capture_output=True, text=True)
+resp = subprocess.run(["curl", "-s", "--connect-timeout", "10", f"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={APPID}&secret={APPSECRET}"], capture_output=True, text=True)
 data = json.loads(resp.stdout)
 if "access_token" not in data:
     print(f"❌ {data}")
@@ -20,7 +20,7 @@ print("   ✅")
 # === Step 2: Download blog post from GitHub ===
 print("📥 下载文章...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_article.md",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-10-noether-theorem-internal-martial-arts.md"], capture_output=True, text=True)
+    "https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-13-time-reversal-symmetry.md"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
@@ -29,7 +29,7 @@ print("   ✅")
 # === Step 3: Download cover image ===
 print("🖼️  下载封面图...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_cover.jpg",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/images/noether-tai-chi-cover.jpg"], capture_output=True, text=True)
+    "https://raw.githubusercontent.com/HardySimpson/blog/main/images/time-reversal-cover.jpg"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
