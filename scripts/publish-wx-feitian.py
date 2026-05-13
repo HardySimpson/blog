@@ -20,7 +20,7 @@ print("   ✅")
 # === Step 2: Download blog post from GitHub ===
 print("📥 下载文章...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_article.md",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-13-time-reversal-symmetry.md"], capture_output=True, text=True)
+    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-13-time-reversal-symmetry.md"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
@@ -29,7 +29,7 @@ print("   ✅")
 # === Step 3: Download cover image ===
 print("🖼️  下载封面图...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_cover.jpg",
-    "https://raw.githubusercontent.com/HardySimpson/blog/main/images/time-reversal-cover.jpg"], capture_output=True, text=True)
+    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/images/time-reversal-cover.jpg"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
@@ -71,6 +71,20 @@ md = re.sub(r'!\[.*?\]\(.*?\)', '', md)
 
 # Remove extra blank lines after signoff ---
 md = re.sub(r'\n{3,}', '\n\n', md)
+
+# Strip kramdown footnote markers [^n] from body text
+md = re.sub(r'\[\^\d+\]', '', md)
+
+# Convert [^n]: definition lines to plain numbered list items
+# This prevents pandoc from generating <a> footnote HTML
+def ref_to_plain(m):
+    """Convert [^N]: reference to plain text"""
+    num = m.group(1)
+    text = m.group(2).strip()
+    return f"{num}. {text}"
+
+md = re.sub(r'\[\^(\d+)\]:\s*(.*?)(?=\n\[\^\d+\]:|\n\n|\Z)', ref_to_plain, md, flags=re.DOTALL)
+
 md = md.strip()
 
 # Write cleaned markdown
@@ -85,8 +99,11 @@ with open("/tmp/wx_article_raw.html") as f:
     html = f.read()
 
 # Clean HTML for WeChat
-# Remove pandoc footnote backlinks
-html = re.sub(r'<a[^>]*>\u2191</a>', '', html)
+# Remove pandoc footnote backlinks and all other <a> tags (keep text)
+html = re.sub(r'<a[^>]*>([^<]*)</a>', r'\1', html)
+
+# Strip footnotes section entirely (WeChat doesn't need them)
+html = re.sub(r'<section[^>]*class="footnotes[^"]*"[^>]*>.*?</section>', '', html, flags=re.DOTALL)
 
 # Remove div/ol/li/sup/thead/tbody tags (keep tables for WeChat)
 html = re.sub(r'<div[^>]*>|</div>', '', html)
