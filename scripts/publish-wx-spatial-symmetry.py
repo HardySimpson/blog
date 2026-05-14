@@ -31,27 +31,46 @@ if md.startswith("---"):
     parts = md.split("---", 2)
     md = parts[2]
 
-# Extract sign-off lines and move to end
+# Split by --- separators to extract sign-off block
+parts = re.split(r'\n---+\n', md)
+# parts[0] = frontmatter (between first --- and second ---)
+# parts[1] = body + signoff after second ---
+body_with_signoff = parts[1] if len(parts) > 1 else parts[0]
+
+# Extract sign-off lines (Sign-off-by / Assisted-by) and rebuild: body only + signoff at end
 signoff_lines = []
 body_lines = []
-in_signoff = False
-for line in md.split("\n"):
-    if line.startswith("Sign-off-by:") or line.startswith("Assisted-by:"):
+for line in body_with_signoff.split('\n'):
+    if line.strip().startswith('Sign-off-by:') or line.strip().startswith('Assisted-by:'):
         signoff_lines.append(line)
-        in_signoff = True
-    elif in_signoff and line.strip() == "":
-        signoff_lines.append(line)
-    elif in_signoff and line.strip() == "---":
-        signoff_lines.append(line)
-        in_signoff = False
+    elif line.strip() == '---':
+        pass  # skip separator inside signoff block
     else:
-        if not in_signoff:
-            body_lines.append(line)
+        body_lines.append(line)
 
-md = "\n".join(body_lines) + "\n\n" + "\n".join(signoff_lines)
+# Strip body image (will be embedded separately via uploadimg API)
+md = re.sub(r'!\[.*?\]\(.*?\)', '', '\n'.join(body_lines)).strip()
 
-# Remove body image (will be embedded separately)
-md = re.sub(r'!\[.*?\]\(.*?\)', '', md)
+# Strip LaTeX math
+md = re.sub(r'\$\$.*?\$\$', '', md, flags=re.DOTALL)
+md = re.sub(r'\$[^$\n]+\$', '', md)
+
+# Strip kramdown footnote markers [^n] from body
+md = re.sub(r'\[\^\d+\]', '', md)
+
+# Convert [^n]: reference lines to plain numbered list items
+def ref_to_plain(m):
+    num = m.group(1)
+    text = m.group(2).strip()
+    return f"{num}. {text}"
+md = re.sub(r'\[\^(\d+)\]:\s*(.*?)(?=\n\[\^\d+\]:|\n\n|\Z)', ref_to_plain, md, flags=re.DOTALL)
+
+# Replace ## 参考资料 with **参考资料** (avoid h2 rendering issue in WeChat)
+md = md.replace('## 参考资料', '**参考资料**')
+
+# Append sign-off block at end
+if signoff_lines:
+    md = md.strip() + '\n\n' + '\n'.join(signoff_lines)
 
 # Strip LaTeX math
 md = re.sub(r'\$\$.*?\$\$', '', md, flags=re.DOTALL)
@@ -128,12 +147,6 @@ else:
 
 # Insert cover image at top of body
 html = cover_img_html + html
-
-# Sign-off at the end
-signoff_html = '''<hr style="margin:30px 0 15px"/>
-<p style="color:#999;font-size:0.85em">Sign-off-by: 难易</p>
-<p style="color:#999;font-size:0.85em">Assisted-by: Hermes:minimax-m2.7</p>'''
-html = html.rstrip() + '\n' + signoff_html
 
 html = html.strip()
 print("   ✅")
