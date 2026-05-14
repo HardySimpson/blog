@@ -8,7 +8,7 @@ excerpt: ""
 
 Sign-off-by: 难易
 
-Assisted-by: Hermes:deepseek-v4-flash
+Assisted-by: Hermes:minimax-m2.7
 
 ---
 
@@ -82,7 +82,7 @@ Assisted-by: Hermes:deepseek-v4-flash
 
 把这两个概念一起用到人体上。
 
-## 四、人体为什么需要空间对称
+## 四、人体为什么要感知和体验空间对称
 
 **（一）平移对称——借地之力与整劲**
 
