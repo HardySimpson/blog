@@ -6,8 +6,8 @@ APPID = "wx6f2600d3acf30196"
 APPSECRET = "72f3328bff546478913559b444d05c6b"
 TITLE = "你的身体对称吗——外三合、丹田与空间结构对称「内家运动三定律」系列之三"
 AUTHOR = "难易"
-MD_PATH = "/home/hermes/projects/blog/_posts/2026-05-14-spatial-symmetry-angular-momentum.md"
-COVER_PATH = "/home/hermes/projects/blog/images/noether-tai-chi-cover.jpg"
+MD_PATH = "/tmp/article.md"
+COVER_PATH = "/tmp/noether-tai-chi-cover.jpg"
 
 # === Step 1: Get access_token ===
 print("🔑 获取 access_token...")
