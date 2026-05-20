@@ -1,0 +1,12 @@
+title: 难易的技术博客
+description: 记录一些技术学习实践的笔记
+lang: zh-CN
+timezone: Asia/Shanghai
+
+permalink: /:year/:month/:day/:title/
+
+collections:
+  posts:
+    output: true
+
+remote_theme: "pages-themes/minimal@v0.2.0"
