@@ -15,6 +15,8 @@ Assisted-by: Hermes:deepseek-v4-pro
 
 但这个猜想留了一个问题没回答：树有根，扎在土里。人站在地上，脚底是平的，怎么把根扎下去。
 
+![树根深扎入大地](https://images.unsplash.com/photo-1749135840537-3e0ece049413?w=1200&q=85)
+
 这就是桩功第一步要解决的事。
 
 ---
