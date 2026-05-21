@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""发布《诺特定理与内家拳》到飞天意面公众号"""
-import sys, json, subprocess, os, re, time, base64
+"""发布《桩功第一步：接地》到飞天意面公众号"""
+import sys, json, subprocess, os, re, time
 
 APPID = "wx6f2600d3acf30196"
 APPSECRET = "72f3328bff546478913559b444d05c6b"
-TITLE = "好动作是可逆的——费登奎斯问题与时间反演对称"
+TITLE = "桩功第一步：接地"
 AUTHOR = "难易"
 
 # === Step 1: Get access_token ===
@@ -20,7 +20,7 @@ print("   ✅")
 # === Step 2: Download blog post from GitHub ===
 print("📥 下载文章...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_article.md",
-    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-13-time-reversal-symmetry.md"], capture_output=True, text=True)
+    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/_posts/2026-05-21-zhuang-gong-step-one-grounding.md"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
@@ -29,7 +29,7 @@ print("   ✅")
 # === Step 3: Download cover image ===
 print("🖼️  下载封面图...")
 r = subprocess.run(["curl", "-sL", "--connect-timeout", "10", "--max-time", "15", "-o", "/tmp/wx_cover.jpg",
-    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/images/time-reversal-cover.jpg"], capture_output=True, text=True)
+    "https://ghfast.top/https://raw.githubusercontent.com/HardySimpson/blog/main/images/tree-roots-grounding-cover.jpg"], capture_output=True, text=True)
 if r.returncode != 0:
     print(f"❌ curl exit={r.returncode} stderr={r.stderr}")
     sys.exit(1)
@@ -45,40 +45,33 @@ if md.startswith("---"):
     parts = md.split("---", 2)
     md = parts[2]
 
-# Extract sign-off and move to end
-signoff_lines = []
-body_lines = []
-in_signoff = False
-for line in md.split("\n"):
+# Remove Sign-off and Assisted-by lines (user prefers WeChat without them)
+md_lines = md.split("\n")
+clean_lines = []
+for line in md_lines:
     if line.startswith("Sign-off-by:") or line.startswith("Assisted-by:"):
-        signoff_lines.append(line)
-        in_signoff = True
-    elif in_signoff and line.strip() == "":
-        signoff_lines.append(line)
-    elif in_signoff and line.strip() == "---":
-        signoff_lines.append(line)
-        in_signoff = False
-    else:
-        if not in_signoff:  # Only add body lines after sign-off section
-            body_lines.append(line)
+        continue
+    # Skip blank lines that were around signoff
+    clean_lines.append(line)
+md = "\n".join(clean_lines)
 
-# Rebuild: body + signoff at end
-md = "\n".join(body_lines) + "\n\n" + "\n".join(signoff_lines)
+# Remove the separator line (standalone ---)
+md = re.sub(r'\n---\n', '\n', md)
 
-# Cover image: move right after the separator, before first heading
-# Remove any stray image from body (it will be embedded separately)
+# Convert "## 参考资料与原始出处" to bold text (WeChat preference)
+md = md.replace('## 参考资料与原始出处', '**参考资料与原始出处**')
+
+# Remove any stray image markdown (will embed cover separately)
 md = re.sub(r'!\[.*?\]\(.*?\)', '', md)
 
-# Remove extra blank lines after signoff ---
+# Remove extra blank lines
 md = re.sub(r'\n{3,}', '\n\n', md)
 
 # Strip kramdown footnote markers [^n] from body text
 md = re.sub(r'\[\^\d+\]', '', md)
 
 # Convert [^n]: definition lines to plain numbered list items
-# This prevents pandoc from generating <a> footnote HTML
 def ref_to_plain(m):
-    """Convert [^N]: reference to plain text"""
     num = m.group(1)
     text = m.group(2).strip()
     return f"{num}. {text}"
@@ -99,72 +92,26 @@ with open("/tmp/wx_article_raw.html") as f:
     html = f.read()
 
 # Clean HTML for WeChat
-# Remove pandoc footnote backlinks and all other <a> tags (keep text)
 html = re.sub(r'<a[^>]*>([^<]*)</a>', r'\1', html)
-
-# Strip footnotes section entirely (WeChat doesn't need them)
-html = re.sub(r'<section[^>]*class="footnotes[^"]*"[^>]*>.*?</section>', '', html, flags=re.DOTALL)
-
-# Remove div/ol/li/sup/thead/tbody tags (keep tables for WeChat)
+html = re.sub(r'<section[^>]*class="footnotes[^\"]*"[^>]*>.*?</section>', '', html, flags=re.DOTALL)
 html = re.sub(r'<div[^>]*>|</div>', '', html)
 html = re.sub(r'<ol[^>]*>|</ol>', '', html)
 html = re.sub(r'<li[^>]*>|</li>', '', html)
 html = re.sub(r'<sup[^>]*>.*?</sup>', '', html, flags=re.DOTALL)
 html = re.sub(r'<hr\s*/?>', '', html)
 html = re.sub(r'<p>\s*</p>', '', html)
-# Strip thead/tbody wrappers (WeChat doesn't need them and they cause visual artifacts)
 html = re.sub(r'<thead[^>]*>|</thead>|<tbody[^>]*>|</tbody>', '', html)
-
-# Keep <a> tags for WeChat links (don't strip them entirely)
-# Only strip backlinks (↑), keep readable links
 html = re.sub(r'<a[^>]*>\s*</a>', '', html)
-
-# Convert $$...$$ math to readable plain text instead of stripping
-def math_to_plain(m):
-    """Convert LaTeX math to readable plain text"""
-    tex = m.group(1)
-    # Common substitutions
-    tex = tex.replace('\\dot{q}', "q'")
-    tex = tex.replace('\\dot{p}', "p'")
-    tex = tex.replace('\\partial', '∂')
-    tex = tex.replace('\\frac{', '(')
-    tex = tex.replace('}{', ')/(')
-    tex = tex.replace('}', ')')
-    tex = tex.replace('\\left(', '(')
-    tex = tex.replace('\\right)', ')')
-    tex = tex.replace('\\approx', '≈')
-    tex = tex.replace('\\quad', '  ')
-    tex = tex.replace('\\cdot', '·')
-    tex = tex.replace('_{', '_')
-    tex = tex.replace('^{', '^')
-    tex = tex.replace('}', '')
-    tex = tex.replace('{', '')
-    tex = tex.replace('_kinetic', '动能')
-    tex = tex.replace('V_gravitational', 'V重力势能')
-    tex = tex.replace('V_elastic', 'V弹性势能')
-    tex = tex.replace('T_kinetic', 'T动能')
-    return tex.strip()
-
-html = re.sub(r'\$\$(.*?)\$\$', lambda m: math_to_plain(m), html, flags=re.DOTALL)
-html = re.sub(r'\$([^$]+)\$', lambda m: math_to_plain(m), html)
 
 # Remove empty <p> tags
 html = re.sub(r'<p>\s*</p>', '', html)
 html = html.strip()
 
-# === Step 4b: Add inline styles to headings ===
-# WeChat strips CSS classes but respects inline style
-# Heading inline styles (h2=1.5em, h3=1.25em — from previous successful post)
-html = re.sub(r'<h2[^>]*>', '<h2 style="font-size:1.5em;font-weight:bold;margin:1em 0 0.4em;border-left:4px solid #07c160;padding-left:8px">', html)
-html = re.sub(r'<h3[^>]*>', '<h3 style="font-size:1.25em;font-weight:bold;margin:0.8em 0 0.3em">', html)
+# Add inline styles to headings
+html = re.sub(r'<h2[^>]*>', '<h2 style="font-size:1.6em;font-weight:bold;margin:1.2em 0 0.5em;border-left:4px solid #07c160;padding-left:8px">', html)
+html = re.sub(r'<h3[^>]*>', '<h3 style="font-size:1.3em;font-weight:bold;margin:1em 0 0.4em">', html)
 
-# === Step 4b2: Style tables for WeChat ===
-html = re.sub(r'<table[^>]*>', '<table style="width:100%;border-collapse:collapse;margin:1em 0;font-size:0.95em">', html)
-html = re.sub(r'<th[^>]*>', '<th style="background-color:#f2f2f2;border:1px solid #d9d9d9;padding:10px 12px;text-align:center;font-weight:bold">', html)
-html = re.sub(r'<td[^>]*>', '<td style="border:1px solid #d9d9d9;padding:10px 12px">', html)
-
-# === Step 4c: Insert cover image at the top of body ===
-# WeChat body images must be uploaded via uploadimg API
+# === Step 5: Upload body image (cover as top image) ===
 print("🖼️  上传正文图片...", flush=True)
 resp = subprocess.run(["curl", "-s",
     f"https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token={TOKEN}",
@@ -175,15 +122,14 @@ if "url" not in img_data:
     cover_img_html = ""
 else:
     cover_url = img_data["url"]
-    cover_img_html = f'<img data-src="{cover_url}" data-ratio="0.5625" data-w="1280" src="{cover_url}" alt="内家运动三定律与现代物理学范式示意" style="width:100%;margin-bottom:1em">'
+    cover_img_html = f'<img data-src="{cover_url}" data-ratio="1.5" data-w="1200" src="{cover_url}" alt="树根深扎大地" style="width:100%;margin-bottom:1em">'
     print(f"   ✅")
 
 html = cover_img_html + html
-
 print("   ✅")
 
-# === Step 5: Upload cover image (as article thumbnail) ===
-print("🖼️  上传封面图...")
+# === Step 6: Upload cover image (as article thumbnail) ===
+print("🖼️  上传封面图缩略图...")
 resp = subprocess.run(["curl", "-s",
     f"https://api.weixin.qq.com/cgi-bin/material/add_material?access_token={TOKEN}&type=image",
     "-F", "media=@/tmp/wx_cover.jpg"], capture_output=True, text=True)
@@ -194,7 +140,7 @@ if "media_id" not in data:
 thumb_id = data["media_id"]
 print(f"   ✅ media_id: {thumb_id}")
 
-# === Step 6: Create draft ===
+# === Step 7: Create draft ===
 print("📋 创建草稿...")
 payload = {
     "articles": [{
@@ -224,7 +170,7 @@ elif data.get("errcode", -1) != 0:
         print("   → IP 不在白名单，需要加 IP 到微信后台")
     sys.exit(1)
 
-# === Step 7: Try to publish (may fail for unverified accounts) ===
+# === Step 8: Try to publish ===
 print("🚀 尝试发布...")
 payload = {"media_id": draft_id}
 with open("/tmp/wx_pub.json", "w") as f:
