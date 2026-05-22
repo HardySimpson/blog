@@ -9,7 +9,7 @@ Sign-off-by: 难易
 
 Assisted-by: Hermes:miniimax/M2.7
 
-昨天写了[桩功第一步：接地](https://github.com/HardySimpson/blog/blob/main/_posts/2026-05-21-zhuang-gong-step-one-grounding.md)，说了接地的重要性。前天写了[桩功的本质猜想](https://github.com/HardySimpson/blog/blob/main/_posts/2026-05-20-zhuang-gong-plant-gene-hypothesis.md)，说站桩是模仿植物。今天聊具体操作：怎么接地。
+之前写了[桩功第一步：接地](https://github.com/HardySimpson/blog/blob/main/_posts/2026-05-21-zhuang-gong-step-one-grounding.md)，说了接地的重要性。再之前写了[桩功的本质猜想](https://github.com/HardySimpson/blog/blob/main/_posts/2026-05-20-zhuang-gong-plant-gene-hypothesis.md)，说站桩是模仿植物。今天聊具体操作：怎么接地。
 
 ---
 
