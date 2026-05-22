@@ -9,9 +9,7 @@ Sign-off-by: 难易
 
 Assisted-by: Hermes:miniimax/M2.7
 
-昨天写了桩功的本质猜想——站桩是模仿植物，强行关闭动物的应激模式，重新激活植物的修复模式。留了一个问题没说：树有根，扎在土里，人站在地上，脚底是平的，怎么把根扎下去。
-
-今天说道说道这件事。
+昨天写了[桩功的本质猜想](https://github.com/HardySimpson/blog/blob/main/_posts/2026-05-21-zhuang-gong-step-one-grounding.md)——站桩是模仿植物，强行关闭动物的应激模式，重新激活植物的修复模式。也说了接地的重要性。今天聊聊，具体在操作上，怎么接地。
 
 ---
 
