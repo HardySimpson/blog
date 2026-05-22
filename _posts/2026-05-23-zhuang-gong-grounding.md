@@ -23,6 +23,8 @@ Assisted-by: Hermes:miniimax/M2.7
 
 所以人只能先法地。
 
+![赤脚站在大地上](https://images.unsplash.com/photo-1648027286072-fb339b0d0c06?w=1200&q=85)
+
 ---
 
 **什么叫法地？**
